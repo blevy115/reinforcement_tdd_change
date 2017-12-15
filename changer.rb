@@ -2,9 +2,7 @@ class Changer
   def self.make_change(coins)
     result = []
     values = [25, 10, 5, 1]
-    values.each do |value|
-      coins = counter(coins, result, value)
-    end
+    values.each {|value| coins = counter(coins, result, value)}
     return result
   end
 end
