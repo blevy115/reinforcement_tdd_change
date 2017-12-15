@@ -9,28 +9,25 @@ class Changer
   end
 end
 
-
 def quarter(coins, result)
-  quarters = coins/25
-  quarters.times { result.push(25)
-    coins -= 25}
-  return coins
+  counter(coins, result, 25)
 end
 
 def dimes(coins, result)
-  dimes = coins/10
-  dimes.times {result.push(10)
-    coins -= 10}
-  return coins
+  counter(coins, result, 10)
 end
 
 def nickels(coins, result)
-  nickels = coins/5
-  nickels.times {result.push(5)
-    coins -= 5}
-  return coins
+  counter(coins, result, 5)
 end
 
 def pennies(coins, result)
-  coins.times {result.push(1)}
+  counter(coins, result, 1)
+end
+
+def counter(coins , result, number)
+  currency = coins/number
+  currency.times  {result.push(number)
+  coins -= number}
+  return coins
 end
